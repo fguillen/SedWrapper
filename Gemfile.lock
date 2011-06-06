@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    sed (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    mocha (0.9.12)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (>= 1.0.0.rc.6)
+  mocha
+  sed!
