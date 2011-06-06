@@ -3,11 +3,13 @@ require_relative 'test_helper'
 class UtilTest < Test::Unit::TestCase
   
   def test_system_osx
+    Sed::Util.instance_variable_set(:@system, nil)
     Kernel.expects(:system).with("sed --version 2> /dev/null").returns(false)
     assert_equal(:osx, Sed::Util.system)
   end
   
   def test_system_gnu
+    Sed::Util.instance_variable_set(:@system, nil)
     Kernel.expects(:system).with("sed --version 2> /dev/null").returns(true)
     assert_equal(:gnu, Sed::Util.system)
   end
