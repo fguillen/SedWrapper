@@ -17,9 +17,9 @@ Having the `sed` console command installed.
 ## How to use it
 
     Sed::Runner.new(<file_path>, [opts]) do |s|
-      s.replace(<expresion>, <replacement>)
-      s.replace(<expresion>, <replacement>)
-      s.replace(<expresion>, <replacement>)
+      s.gsub(<expresion>, <replacement>)
+      s.gsub(<expresion>, <replacement>)
+      s.gsub(<expresion>, <replacement>)
     end
 
 ## Options
@@ -36,8 +36,8 @@ The following options are currently supported
       :output         => '/tmp/output.txt', 
       :extended_regex => true
     ) do |s|
-      s.replace("[aeiou]", "x")
-      s.replace("\s", "-")
+      s.gsub("[aeiou]", "x")
+      s.gsub("\s", "-")
     end
     
 ## License

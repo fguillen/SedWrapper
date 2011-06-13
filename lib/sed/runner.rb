@@ -10,8 +10,8 @@ module Sed
       instance_eval(&blk) if block_given?
     end
   
-    def replace(expression, replacement)
-      Sed::Commander.replace(
+    def gsub(expression, replacement)
+      Sed::Commander.gsub(
         input_file_path, 
         expression,
         replacement,
