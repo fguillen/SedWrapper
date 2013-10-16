@@ -11,7 +11,7 @@ class CommanderTest < Test::Unit::TestCase
     FileUtils.rmtree @tmp_path
   end
   
-  def test_replace_basic
+  def test_gsub_basic
     input_file_path = "#{@tmp_path}/input01.txt" 
     
     FileUtils.copy(
@@ -19,7 +19,7 @@ class CommanderTest < Test::Unit::TestCase
       input_file_path
     )
     
-    Sed::Commander.replace(
+    Sed::Commander.gsub(
       input_file_path, 
       "a", 
       "-"
@@ -31,11 +31,11 @@ class CommanderTest < Test::Unit::TestCase
     )
   end
   
-  def test_replace_with_output
+  def test_gsub_with_output
     input_file_path   = "#{FIXTURES_PATH}/input01.txt" 
     output_file_path  = "#{@tmp_path}/output01.txt" 
     
-    Sed::Commander.replace(
+    Sed::Commander.gsub(
       input_file_path,
       "a",
       "-",
@@ -48,11 +48,11 @@ class CommanderTest < Test::Unit::TestCase
     )    
   end
   
-  def test_replace_with_output_and_ere
+  def test_gsub_with_output_and_ere
     input_file_path   = "#{FIXTURES_PATH}/input01.txt" 
     output_file_path  = "#{@tmp_path}/output02_ere.txt" 
     
-    Sed::Commander.replace(
+    Sed::Commander.gsub(
       input_file_path,
       "[aeiou]",
       "-",

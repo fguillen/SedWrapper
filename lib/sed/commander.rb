@@ -3,7 +3,7 @@ module Sed
     
     extend self
     
-    def replace(input_file_path, expression, replacement, opts = {})
+    def gsub(input_file_path, expression, replacement, opts = {})
       command = "sed #{argv(input_file_path, expression, replacement, opts)}"
       result  = Kernel.system command
     end
